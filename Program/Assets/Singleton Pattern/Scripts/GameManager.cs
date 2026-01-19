@@ -15,7 +15,16 @@ public class GameManager : MonoBehaviour
             if (instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
+
+                if(instance == null)
+                {
+                    GameObject clone = new GameObject(nameof(GameManager));
+                    instance = clone.AddComponent<GameManager>();
+                }
             }
+
+
+
             return instance; 
         }
     }
@@ -26,8 +35,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        instance = this;
     }
 
     void Start()
@@ -40,5 +47,13 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         state = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Pause();
+        }
     }
 }
