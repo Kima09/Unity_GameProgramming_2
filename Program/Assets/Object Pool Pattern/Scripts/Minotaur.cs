@@ -6,7 +6,7 @@ public class Minotaur : MonoBehaviour
     [SerializeField] Vector3 direction;
     [SerializeField] Transform portalTransform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    private void OnEnable()
     {
         portalTransform = GameObject.Find("Portal").transform;
         transform.LookAt(portalTransform);
@@ -25,7 +25,7 @@ public class Minotaur : MonoBehaviour
     {
         if(other.CompareTag("Portal"))
         {
-            Destroy(gameObject);
+            ObjectPool.Instance.Return(gameObject);
         }
     }
 }
