@@ -1,23 +1,19 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPool : Singleton<ObjectPool>
 {
     [SerializeField] int createCount;
-    [SerializeField] static ObjectPool instance;
-    public static ObjectPool Instance { get { return instance; } }
+    
     [SerializeField] Queue<GameObject> queue = new Queue<GameObject>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        createCount = 5;
+    }
+
+    private void Start()
+    {
         Create();
     }
 
