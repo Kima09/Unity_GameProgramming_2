@@ -1,13 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Reward : MonoBehaviour
+public class Reward : MonoBehaviour, IRewardable
 {
     [SerializeField] int random;
     [SerializeField] Item [ ] dataList;
 
     [SerializeField] Image image;
-    
+
+    public void Receive()
+    {
+        Debug.Log(gameObject.name+"Acquisition");
+    }
+
     private void Awake()
     {
         image = GetComponent<Image>();

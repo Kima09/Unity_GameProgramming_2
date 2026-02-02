@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3270474314355528850}
   - component: {fileID: 4825395265234347813}
   - component: {fileID: -6904415584982077691}
+  - component: {fileID: 759913022149060029}
   m_Layer: 5
   m_Name: Reward
   m_TagString: Untagged
@@ -89,3 +90,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates: []
+--- !u!114 &759913022149060029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9092522688322099496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3cc5ecefb914a43b2416273904d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Reward
+  random: 0
+  dataList:
+  - name: Gold
+    sprite: {fileID: 21300000, guid: 3c8f00c7cc7104e279600ab7aa1a52e9, type: 3}
+  - name: Potion
+    sprite: {fileID: 21300000, guid: b7e6f9ce747b04e1b9db526471629555, type: 3}
+  - name: Ruby
+    sprite: {fileID: 21300000, guid: 9075b64c6be9643b1ad74388fb2780d5, type: 3}
+  - name: Shield
+    sprite: {fileID: 21300000, guid: 9ba174268c6e14c4980de3d3046fed80, type: 3}
+  image: {fileID: 0}
