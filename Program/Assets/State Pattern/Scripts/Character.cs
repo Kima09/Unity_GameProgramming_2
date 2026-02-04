@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
 
     public void SwitchState(IStateable state)
     {
-
+        stateable.Exit(this);
+        stateable = state;
+        stateable.Enter(this);
     }
 }
