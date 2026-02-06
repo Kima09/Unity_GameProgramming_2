@@ -5,11 +5,15 @@ public class Bull : MonoBehaviour
 {
     private Coroutine coroutine;
 
+    [SerializeField] AnimatorStateInfo animatorStateInfo;
     [SerializeField] Animator animator;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+
+        animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+    
     }
 
     private void Start()
@@ -35,14 +39,36 @@ public class Bull : MonoBehaviour
     private IEnumerator Smash()
     {
         animator.SetTrigger("Smash");
-        yield return new WaitForSeconds(2.5f);
-        Debug.Log("Smash Exit");
+
+        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
+
+        
+
+        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
+
     }
 
     private IEnumerator Damnation()
     {
         animator.SetTrigger("Damnation");
-        yield return new WaitForSeconds(2.5f);
-        Debug.Log("Damnation Exit");
+
+        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
+
+        
+
+        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
+
+    }
+
+    private IEnumerator Paranoia()
+    {
+        animator.SetTrigger("Paranoia");
+
+        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
+
+        
+
+        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
+
     }
 }
