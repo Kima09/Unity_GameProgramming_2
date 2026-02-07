@@ -5,6 +5,8 @@ public class Bull : MonoBehaviour
 {
     private Coroutine coroutine;
 
+    [SerializeField] string[] patternName;
+
     [SerializeField] AnimatorStateInfo animatorStateInfo;
     [SerializeField] Animator animator;
 
@@ -12,63 +14,44 @@ public class Bull : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
-    
+        
     }
 
     private void Start()
     {
-        coroutine = StartCoroutine(Smash());
-
-        
+        StartCoroutine(Coroutine());
     }
 
-    private void Update()
+   
+
+    IEnumerator Coroutine()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        while(true)
         {
+            yield return CoroutineCache.GetCachedWait(5);
+
             if (coroutine != null)
             {
                 StopCoroutine(coroutine);
             }
-            coroutine = StartCoroutine(Damnation());
+            coroutine = StartCoroutine(Pattern(patternName[Random.Range(0,patternName.Length)]));
         }
     }
+
+   
+
+    private IEnumerator Pattern(string name)
+    {
+        animator.SetTrigger(name);
+
+        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
+
+
+
+        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
+
+    }
+
+
     
-
-    private IEnumerator Smash()
-    {
-        animator.SetTrigger("Smash");
-
-        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
-
-        
-
-        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
-
-    }
-
-    private IEnumerator Damnation()
-    {
-        animator.SetTrigger("Damnation");
-
-        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
-
-        
-
-        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
-
-    }
-
-    private IEnumerator Paranoia()
-    {
-        animator.SetTrigger("Paranoia");
-
-        AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo(0);
-
-        
-
-        yield return CoroutineCache.GetCachedWait(clipInfos[0].clip.length);
-
-    }
 }
