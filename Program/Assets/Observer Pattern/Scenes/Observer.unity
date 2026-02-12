@@ -595,6 +595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7862858c7c702d498828152221c5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Notofication
+  sprite: {fileID: 21300000, guid: 1a22abc46d79151419d0aa8f4e296033, type: 3}
+  canvas: {fileID: 0}
+  questImage: {fileID: 0}
 --- !u!1 &739204252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7862858c7c702d498828152221c5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Notofication
+  sprite: {fileID: 21300000, guid: 1a22abc46d79151419d0aa8f4e296033, type: 3}
+  canvas: {fileID: 0}
+  questImage: {fileID: 0}
 --- !u!1 &1135323792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1335,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666448269}
   m_CullTransparentMesh: 1
+--- !u!1 &1860104855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860104857}
+  - component: {fileID: 1860104856}
+  m_Layer: 0
+  m_Name: Performance Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1860104856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860104855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5846a851f2869a04f8da1d2eb7d7be6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerformanceManager
+  questTitle:
+  - Into the Forest
+  - Collect Healing Hurbs
+  - Defeat Slimes
+--- !u!4 &1860104857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860104855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860207940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7862858c7c702d498828152221c5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Notofication
+  sprite: {fileID: 21300000, guid: 1a22abc46d79151419d0aa8f4e296033, type: 3}
+  canvas: {fileID: 0}
+  questImage: {fileID: 0}
 --- !u!1 &2036774213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,3 +1837,4 @@ SceneRoots:
   - {fileID: 2030064696}
   - {fileID: 703812017}
   - {fileID: 1860207943}
+  - {fileID: 1860104857}
